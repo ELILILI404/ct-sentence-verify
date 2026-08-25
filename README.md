@@ -12,6 +12,20 @@ This repository releases the first sentence-level labelled corpus for volumetric
 
 The two label sets cover the **same 5,000 studies**, so a reward model trained on either can be compared under identical data. The image-evidence set is smaller because only sentences that name one of the 18 CT-RATE abnormality classes can be checked against the image; the LLM set keeps every sentence.
 
+![Labelling pipeline](figures/labelling-pipeline.png)
+
+*(a) The frozen CT-CLIP encoder gives zero-shot probabilities for the 18 abnormality classes. (b) RadGraph parses each generated sentence into entities and their asserted polarity; entities are mapped to the 18 classes, and sentences without a disease entity are discarded. (c) Polarity and the class probability are combined at threshold τ into a binary support label. (d) One record per report trains a sentence-level reward model.*
+
+## The corpus at a glance
+
+![Sentences per class](figures/class_distribution.png)
+
+Lung nodule, cardiomegaly and pleural effusion account for 63 % of the image-evidence set; lymphadenopathy (10 sentences) and lung opacity (79) are the rarest classes. The support rate also varies by class, from 40 % for pleural-effusion sentences to 98 % for atelectasis.
+
+![Support rate by polarity](figures/support_by_polarity.png)
+
+The two label sources are not interchangeable. On the same 20,551 sentences the image-evidence rule supports 88 % of sentences that *assert* a finding and 38 % of those that *deny* one, while the LLM-vs-reference rule does almost the reverse (26 % and 87 %). Overall agreement is 39.8 %. The reason is structural: reference reports rarely mention every normal structure, so a denial is almost never contradicted by the reference, whereas CT-CLIP scores an absence directly against the image. Reward models trained on the two sets therefore learn opposite preferences about how much a report should assert.
+
 ## What is (and is not) in this repository
 
 Included:
@@ -22,6 +36,7 @@ Included:
 - `data/study_manifest.csv` — the 5,000 studies (one study per patient, one reconstruction per study, train split only).
 - `data/prm_format/*.jsonl` — the three label sets in TRL `PRMTrainer` format (`prompt`, `completions`, `labels`).
 - `pipeline/` — the nine scripts that produced everything above, in order.
+- `figures/` — the pipeline diagram and the two summary figures above.
 - `scripts/verify_release.py` — recomputes the counts in the table and checks that the released labels can be rebuilt from the released inputs.
 
 Not included, because they are governed by their own licences:
