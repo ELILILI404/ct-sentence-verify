@@ -1,0 +1,125 @@
+{
+  "classes": [
+    "Medical material",
+    "Arterial wall calcification",
+    "Cardiomegaly",
+    "Pericardial effusion",
+    "Coronary artery wall calcification",
+    "Hiatal hernia",
+    "Lymphadenopathy",
+    "Emphysema",
+    "Atelectasis",
+    "Lung nodule",
+    "Lung opacity",
+    "Pulmonary fibrotic sequela",
+    "Pleural effusion",
+    "Mosaic attenuation pattern",
+    "Peribronchial thickening",
+    "Consolidation",
+    "Bronchiectasis",
+    "Interlobular septal thickening"
+  ],
+  "observation_to_class": {
+    "emphysema": "Emphysema",
+    "emphysematous": "Emphysema",
+    "atelectasis": "Atelectasis",
+    "atelectatic": "Atelectasis",
+    "atelectases": "Atelectasis",
+    "hernia": "Hiatal hernia",
+    "nodule": "Lung nodule",
+    "nodules": "Lung nodule",
+    "nodular": "Lung nodule",
+    "consolidation": "Consolidation",
+    "opacity": "Lung opacity",
+    "opacities": "Lung opacity",
+    "ground-glass": "Lung opacity",
+    "fibrosis": "Pulmonary fibrotic sequela",
+    "fibrotic": "Pulmonary fibrotic sequela",
+    "mosaic": "Mosaic attenuation pattern",
+    "bronchiectasis": "Bronchiectasis",
+    "lymphadenopathy": "Lymphadenopathy",
+    "cardiomegaly": "Cardiomegaly",
+    "calcification": "_CALC",
+    "calcifications": "_CALC",
+    "atheroma": "_CALC",
+    "atheromatous": "_CALC",
+    "plaque": "_CALC",
+    "plaques": "_CALC",
+    "calcific": "_CALC",
+    "effusion": "_EFF",
+    "effusion-thickening": "_EFF",
+    "effusions": "_EFF",
+    "thickening": "_THICK",
+    "suture": "Medical material",
+    "stent": "Medical material",
+    "catheter": "Medical material"
+  },
+  "anatomy_hint": {
+    "_CALC": [
+      [
+        [
+          "coronary"
+        ],
+        "Coronary artery wall calcification"
+      ],
+      [
+        [
+          "aorta",
+          "aortic",
+          "arch"
+        ],
+        "Arterial wall calcification"
+      ]
+    ],
+    "_EFF": [
+      [
+        [
+          "pleural",
+          "pleura"
+        ],
+        "Pleural effusion"
+      ],
+      [
+        [
+          "pericardial",
+          "pericardium"
+        ],
+        "Pericardial effusion"
+      ]
+    ],
+    "_THICK": [
+      [
+        [
+          "septal",
+          "interlobular"
+        ],
+        "Interlobular septal thickening"
+      ],
+      [
+        [
+          "peribronchial",
+          "bronchial"
+        ],
+        "Peribronchial thickening"
+      ]
+    ]
+  },
+  "normal_observations": [
+    "natural",
+    "normal",
+    "open",
+    "patent",
+    "preserved",
+    "unremarkable"
+  ],
+  "anatomy_to_class_normal": [
+    [
+      [
+        "heart",
+        "cardiac",
+        "contour"
+      ],
+      "Cardiomegaly"
+    ]
+  ]
+}

@@ -1,0 +1,10 @@
+The contents of data/ are released under the Creative Commons
+Attribution-NonCommercial-ShareAlike 4.0 International licence (CC BY-NC-SA 4.0),
+the licence of the CT-RATE dataset from which they derive.
+
+Full text: https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode
+
+The generated sentences are model outputs of CT-CHAT conditioned on CT-RATE
+volumes. Identifiers (study_id, volume_id) are CT-RATE identifiers. No CT-RATE
+volumes, reference reports or DICOM metadata are redistributed here; obtain them
+from https://huggingface.co/datasets/ibrahimhamamci/CT-RATE under its terms.

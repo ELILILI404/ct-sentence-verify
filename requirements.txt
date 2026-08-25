@@ -1,0 +1,12 @@
+# CPU steps (04, 06, 08, verify)
+pandas>=2.0
+pyarrow>=14
+numpy>=1.24
+requests>=2.31          # 07
+datasets>=2.19          # 08 --hf-dir, 09
+# GPU steps
+torch>=2.1              # 02, 03, 05, 09
+transformers>=4.44      # 03, 09
+trl>=0.13               # 09 (PRMTrainer)
+radgraph>=0.1.10        # 05
+# 02 and 03 additionally need the CT-CHAT and CT-CLIP repositories on sys.path
